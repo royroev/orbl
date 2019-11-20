@@ -6,8 +6,8 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
-    # ports:
-      # - "8001:3306"
+    ports:
+      - "8001:3306"
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
@@ -28,9 +28,9 @@ services:
       WORDPRESS_DB_NAME: wordpress
     working_dir: /var/www/html
     volumes:
-      # - ./wp-content:/var/www/html/wp-content
-      # - ./wp-admin:/var/www/html/wp-admin
-      # - ./wp-includes:/var/www/html/wp-includes
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-admin:/var/www/html/wp-admin
+      - ./wp-includes:/var/www/html/wp-includes
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 volumes:
   db_data: {}
