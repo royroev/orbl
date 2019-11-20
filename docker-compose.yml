@@ -30,7 +30,7 @@ services:
     volumes:
       - ./wp-content:/var/www/html/wp-content
       # - ./wp-admin:/var/www/html/wp-admin
-      - ./wp-includes:/var/www/html/wp-includes
+      # - ./wp-includes:/var/www/html/wp-includes
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 volumes:
   db_data: {}
